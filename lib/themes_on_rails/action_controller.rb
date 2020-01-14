@@ -22,7 +22,7 @@ module ThemesOnRails
           end
 
           private :layout_from_theme, :theme_instance
-          layout  :layout_from_theme, options
+          # layout  :layout_from_theme, options
           helper_method :current_theme
         end
 
@@ -42,7 +42,7 @@ module ThemesOnRails
           case Rails::VERSION::MAJOR
           when 3
             options.delete(:prepend) ? :prepend_before_filter : :before_filter
-          when 4, 5
+          when 4, 5, 6
             options.delete(:prepend) ? :prepend_before_action : :before_action
           end
         end
